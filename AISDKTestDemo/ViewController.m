@@ -282,7 +282,9 @@
  在线活体检测
  */
 - (void)liveBodyDetect {
-    [[AISDKManager sharedInstance] liveBodyDetectParameters:@{@"image":_imageBase64,
+    UIImage *image = [UIImage imageNamed:@"timg.jpeg"];
+    NSString *imageBase64 = [AIImageUtils imageToBase64:image compressionQuality:1 isUrlencode:YES];
+    [[AISDKManager sharedInstance] liveBodyDetectParameters:@{@"image":imageBase64,
                                                            @"image_type":@"BASE64",
                                                            } completion:^(id  _Nonnull result) {
                                                                [self showAlert:result];

@@ -405,7 +405,7 @@
 
 //在线活体检测
 - (void)liveBodyDetectParameters:(id)parameters completion:(AICompletion)completion{
-    NSString *url = [NSMutableString stringWithFormat:@"%@/rest/2.0/face/v3/faceverify",Domain];
+    NSString *url = [NSMutableString stringWithFormat:@"%@/face-api/v3/face/liveness",Domain];
     [AINetworking PostWithURL:url Params:parameters success:^(id responseObject) {
         if (completion) {
             completion(responseObject);
@@ -420,7 +420,7 @@
 
 //h5活体检测
 - (void)h5BodyDetectParameters:(id)parameters completion:(AICompletion)completion{
-    NSString *url = [NSMutableString stringWithFormat:@"%@/rest/2.0/face/v1/faceliveness/sessioncode",Domain];
+    NSString *url = [NSMutableString stringWithFormat:@"%@/face-api/face/liveness",Domain];
     [AINetworking PostWithURL:url Params:parameters success:^(id responseObject) {
         if (completion) {
             completion(responseObject);

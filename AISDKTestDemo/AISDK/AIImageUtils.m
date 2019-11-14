@@ -26,6 +26,7 @@
         NSString * charaters = @"?!@#$^&%*+,:;='\"`<>()[]{}/\\| ";
         NSCharacterSet * set = [[NSCharacterSet characterSetWithCharactersInString:charaters] invertedSet];
         base64Str= [base64Str stringByAddingPercentEncodingWithAllowedCharacters:set];
+        base64Str= [base64Str stringByAddingPercentEncodingWithAllowedCharacters:set];
     }
     return base64Str;
 }
