@@ -49,6 +49,7 @@
 		AA3CC6AC236823B6005E7B48 /* peoples.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peoples.png; sourceTree = "<group>"; };
 		AA3CC6AE23683B57005E7B48 /* people1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people1.png; sourceTree = "<group>"; };
 		AA3CC6B0236847DC005E7B48 /* love.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = love.jpg; sourceTree = "<group>"; };
+		AA6324F6237EBD5D00F5DEFE /* 123.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 123.mp4; sourceTree = "<group>"; };
 		B193579C22D6D73800914BCE /* AISDKTestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AISDKTestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B193579F22D6D73800914BCE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B19357A022D6D73800914BCE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -124,6 +125,7 @@
 		B193579E22D6D73800914BCE /* AISDKTestDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AA6324F6237EBD5D00F5DEFE /* 123.mp4 */,
 				AA3CC6B0236847DC005E7B48 /* love.jpg */,
 				AA3CC6AE23683B57005E7B48 /* people1.png */,
 				AA3CC6AC236823B6005E7B48 /* peoples.png */,

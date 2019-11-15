@@ -20,4 +20,6 @@ typedef void (^FailureBlock)(NSString *error);
 
 + (void)PostWithURL:(NSString *)url Params:(id)params success:(SuccessBlock)success failure:(FailureBlock)failure;
 
++ (void)PostWithURL:(NSString *)url Params:(id)params success:(SuccessBlock)success failure:(FailureBlock)failure isUrlencode:(BOOL )isUrlencode;
+
 @end

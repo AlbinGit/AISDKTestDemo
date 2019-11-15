@@ -285,7 +285,8 @@
     UIImage *image = [UIImage imageNamed:@"timg.jpeg"];
     NSString *imageBase64 = [AIImageUtils imageToBase64:image compressionQuality:1 isUrlencode:YES];
     [[AISDKManager sharedInstance] liveBodyDetectParameters:@{@"image":imageBase64,
-                                                           @"image_type":@"BASE64",
+                                                              @"image_type":@"BASE64",
+                                                              @"appid":@"50",
                                                            } completion:^(id  _Nonnull result) {
                                                                [self showAlert:result];
                                                            }];
@@ -295,9 +296,10 @@
  h5活体检测
  */
 - (void)h5BodyDetect {
-    UIImage *image = [UIImage imageNamed:@"love.jpg"];
-    NSString *imageBase64 = [AIImageUtils imageToBase64:image compressionQuality:1 isUrlencode:YES];
-    [[AISDKManager sharedInstance] h5BodyDetectParameters:@{@"image":imageBase64,
+    NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"video" ofType:@"mp4"];
+    NSData *videoData = [NSData dataWithContentsOfFile:videoPath];
+    NSString *videoBase64 = [AIImageUtils dataToBase64:videoData isUrlencode:NO];
+    [[AISDKManager sharedInstance] h5BodyDetectParameters:@{@"video_base64":videoBase64,
                                                            } completion:^(id  _Nonnull result) {
                                                                [self showAlert:result];
                                                            }];

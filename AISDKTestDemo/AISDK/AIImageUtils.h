@@ -42,6 +42,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (NSString *)imageToBase64:(UIImage *)image compressionQuality:(CGFloat)compressionQuality isUrlencode:(BOOL )isUrlencode;
 
++ (NSString *)dataToBase64:(NSData *)data isUrlencode:(BOOL )isUrlencode;
+
 @end
 
 NS_ASSUME_NONNULL_END

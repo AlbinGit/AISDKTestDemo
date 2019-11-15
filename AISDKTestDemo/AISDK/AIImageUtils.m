@@ -31,6 +31,15 @@
     return base64Str;
 }
 
-
++ (NSString *)dataToBase64:(NSData *)data isUrlencode:(BOOL )isUrlencode {
+    NSString *base64Str = [self dataToBase64:data];
+    if (isUrlencode) {
+        NSString * charaters = @"?!@#$^&%*+,:;='\"`<>()[]{}/\\| ";
+        NSCharacterSet * set = [[NSCharacterSet characterSetWithCharactersInString:charaters] invertedSet];
+        base64Str= [base64Str stringByAddingPercentEncodingWithAllowedCharacters:set];
+        base64Str= [base64Str stringByAddingPercentEncodingWithAllowedCharacters:set];
+    }
+    return base64Str;
+}
 
 @end

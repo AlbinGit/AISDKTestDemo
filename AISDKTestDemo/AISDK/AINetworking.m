@@ -133,12 +133,14 @@ NSInteger const Interval = 30;
 
 //原生POST请求
 + (void)PostWithURL:(NSString *)url Params:(id)params success:(SuccessBlock)success failure:(FailureBlock)failure{
+    [self PostWithURL:url Params:params success:success failure:failure isUrlencode:NO];
+}
 
++ (void)PostWithURL:(NSString *)url Params:(id)params success:(SuccessBlock)success failure:(FailureBlock)failure isUrlencode:(BOOL )isUrlencode {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"POST"];
     
-   
-    if ([url containsString:@"image-classify"]) {
+    if (isUrlencode) {
         NSString *jsonString = [self urlencodedStrByDic:params];
         NSData *bodyData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];//把bodyString转换为NSData数据
         [request setHTTPBody:bodyData];
@@ -154,22 +156,22 @@ NSInteger const Interval = 30;
     
     //表单格式
     //把字典中的参数进行拼接
-//    NSString *body = LZQueryStringFromParameters(params);
-//    NSData *bodyData = [body dataUsingEncoding:NSUTF8StringEncoding];
+    //    NSString *body = LZQueryStringFromParameters(params);
+    //    NSData *bodyData = [body dataUsingEncoding:NSUTF8StringEncoding];
     //设置请求体
-//    [request setHTTPBody:bodyData];
+    //    [request setHTTPBody:bodyData];
     //设置本次请求的数据请求格式
-//    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    //    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     // 设置本次请求请求体的长度(因为服务器会根据你这个设定的长度去解析你的请求体中的参数内容)
     
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"AISDK_access_token"];
     [request setValue:token forHTTPHeaderField:@"access_token"];
-
+    
     //设置请求最长时间
     request.timeoutInterval = Interval;
     
     NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-     
+        
         if (data) {
             //利用iOS自带原生JSON解析data数据 保存为Dictionary
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];

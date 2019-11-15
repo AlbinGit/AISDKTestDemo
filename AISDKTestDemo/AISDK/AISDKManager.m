@@ -283,7 +283,7 @@
         if (completion) {
             completion(error);
         }
-    }];
+    } isUrlencode:YES];
 }
 
 /**
@@ -302,7 +302,7 @@
         if (completion) {
             completion(error);
         }
-    }];
+    } isUrlencode:YES];
 }
 
 /**
@@ -321,7 +321,7 @@
         if (completion) {
             completion(error);
         }
-    }];
+    } isUrlencode:YES];
 }
 
 /**
@@ -400,7 +400,7 @@
         if (completion) {
             completion(error);
         }
-    }];
+    } isUrlencode:YES];
 }
 
 //在线活体检测
@@ -414,7 +414,7 @@
         if (completion) {
             completion(error);
         }
-    }];
+    } isUrlencode:YES];
 }
 
 
